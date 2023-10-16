@@ -7,17 +7,17 @@ theme: /
         a: Начнём.
 
     state: Hello
-        intent!: /привет
+        intent!: /pin
         a: Привет привет
 
     state: Bye
         intent!: /пока
         a: Пока пока
 
-    state: NoMatch
-        event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
-
+    state: pin
+        intent!: /пароль
+        a: Здравствуйте!
+        
     state: Match
         event!: match
         a: {{$context.intent.answer}}
