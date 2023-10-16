@@ -4,19 +4,27 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Начнём.
+        a: Здравствуйте! Спасибо что обратились в службу поддержки. Чем я могу вам помочь?
 
     state: Hello
-        intent!: /pin
-        a: Привет привет
-
-    state: Bye
-        intent!: /пока
-        a: Пока пока
+        intent!: /привет
+        a: Здравствуйте! Спасибо что обратились в службу поддержки. Чем я могу вам помочь?
 
     state: pin
-        intent!: /пароль
-        a: Здравствуйте!
+        intent!: /смена пина
+        a: {{$context.intent.answer}}
+        
+    state: app
+        intent!: /приложение
+        a: {{$context.intent.answer}}    
+        
+            
+    state: choice
+        intent!: /выбор действия
+        a:{{$context.intent.answer}}
+        
+        
+        
         
     state: Match
         event!: match
